@@ -393,11 +393,8 @@ def aggregate(args: argparse.Namespace) -> None:
                 with open(v, "r", encoding="utf8") as f:
                     lines = utils.trim(f.read())
 if lines:
-    if v.endswith("clash.yaml"):
-        now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        lines = f"# 订阅更新时间：{now} \n" + lines
-
-    files[k] = {"content": lines, "filename": k}
+                        files[k] = {"content": lines, "filename": k}
+    
         if urls:
             files[subscribes_file] = {"content": "\n".join(urls), "filename": subscribes_file}
 
